@@ -12,37 +12,37 @@ options = [["Blue", "Green", "Red", "Yellow", "Orange"],
            ["Red", "Blue", "Green", "Purple", "White"],
            ["Orange", "Red", "Green", "White", "Gold"]]
 
-question_counter = 0
-score = 0
-total_questions = len(question_bank)
-index = 1
-
 def check_answer(correct_answer, user_input):
     if user_input == correct_answer:
         return True
     else: return False
 
-
-while question_counter < total_questions:
-    print(question_bank[question_counter])
-
-    # for i in range(len(options[question_counter])):
-    #     print(i + 1, options[question_counter][i])
+def run_quiz():
+    question_counter = 0
+    score = 0
+    total_questions = len(question_bank)
 
 
-    for i in question_bank:
-        print("Question", index, ":")
+    while question_counter < total_questions:
+        print(question_bank[question_counter])
 
-    user_choice = int(input("Enter your choice from the options:"))
-    user_answer = correct_answer[question_counter]
+        for i in range(len(options[question_counter])):
+            print(i + 1, options[question_counter][i])
 
-    if check_answer(correct_answer, user_answer):
-        print("Correct!")
-        score += 1
-    else: print("Incorrect!")
 
-    question_counter += 1
+        user_input = int(input("\nEnter your choice from the options:\n"))
+        user_answer = correct_answer[question_counter]
 
-print("End of quiz.")
-print(f"Your score is {score}/{total_questions}")
-print("You have scored", score/total_questions * 100, "% on this quiz.")
+
+        if check_answer(user_answer, correct_answer):
+            print("Correct!")
+            score += 1
+        else: print("Incorrect!")
+
+        question_counter += 1
+
+    print("End of quiz.")
+    print(f"Your score is {score}/{total_questions}")
+    print("You have scored", score/total_questions * 100,"% on this quiz.")
+
+run_quiz()
