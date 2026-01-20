@@ -26,6 +26,10 @@ def check_answer(correct_answer, user_input):
 while question_counter < total_questions:
     print(question_bank[question_counter])
 
+    # for i in range(len(options[question_counter])):
+    #     print(i + 1, options[question_counter][i])
+
+
     for i in question_bank:
         print("Question", index, ":")
 
