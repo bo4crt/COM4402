@@ -31,7 +31,6 @@ def run_quiz():
     score = 0
     total_questions = len(quiz)
 
-    random.shuffle(quiz)
 
     for question in quiz:
         print("\n" + question["question"])
@@ -41,14 +40,24 @@ def run_quiz():
         for i in range(len(question["options"])):
             print(i + 1, question["options"][i])
 
-        user_choice = int(input("Enter your choice: ")) - 1
+
+        while True:
+            try:
+                user_choice = int(input("\nEnter your choice (1-4): ")) - 1
+                if 0 <= user_choice < len(question["options"]):
+                    break
+                else:
+                    print("Please enter a number between 1 and 4.")
+            except ValueError:
+                print("Please enter a valid number.")
+
         user_answer = question["options"][user_choice]
 
         if check_answer(question["answer"], user_answer):
             print("Correct!")
             score += 1
         else:
-            print("Incorrect!")
+            print("Incorrect! The answer was", question["answer"])
 
     print("\nEnd of quiz.")
     print(f"Your score is {score}/{total_questions}")
@@ -56,7 +65,5 @@ def run_quiz():
 
 
 run_quiz()
-
-
 
 
