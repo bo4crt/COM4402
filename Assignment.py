@@ -31,6 +31,7 @@ def run_quiz():
     score = 0
     total_questions = len(quiz)
 
+    random.shuffle(quiz)
 
     for question in quiz:
         print("\n" + question["question"])
@@ -60,7 +61,7 @@ def run_quiz():
             print("Incorrect! The answer was", question["answer"])
 
     print("\nEnd of quiz.")
-    print(f"Your score is {score}/{total_questions}")
+    print(f"Your score is {score}/{total_questions}.")
     print("You have scored", score / total_questions * 100, "% on this quiz.")
 
 
