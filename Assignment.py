@@ -1,5 +1,4 @@
 import random
-import array
 
 quiz = [{"question": "What colour is the sky?",
          "options": ["Blue", "Green", "Red", "Yellow"],
@@ -32,16 +31,14 @@ def check_answer(question, user_input):
 
 
 def get_answer_from_user(question):
-    # print question text
     print("\n" + question["question"])
 
-    # shuffle options and display
     random.shuffle(question["options"])
     total_options = len(question["options"])
     for i in range(total_options):
         print(i + 1, question["options"][i])
 
-    # user chooses options between 1 to total options
+
     while True:
         try:
             user_choice_index = int(input(f"\nEnter your choice (1-{total_options}): ")) - 1
@@ -56,6 +53,10 @@ def get_answer_from_user(question):
 
 
 def run_quiz():
+
+    print("Holton College Quiz")
+    print("Please answer questions by entering the number of your choice:")
+
     score = 0
     total_questions = len(quiz)
 
@@ -72,7 +73,7 @@ def run_quiz():
 
     print("\nEnd of quiz.")
     print(f"Your score is {score}/{total_questions}.")
-    print("You have scored", score / total_questions * 100, "% on this quiz.")
+    print(f"You have scored {round(score / total_questions * 100, 2)}% on this quiz.")
 
 
 run_quiz()
