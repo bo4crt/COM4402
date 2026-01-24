@@ -71,6 +71,7 @@ def run_quiz():
         else:
             print("Incorrect! The answer was", question["answer"])
 
+
     print("\nEnd of quiz.")
     print(f"Your score is {score}/{total_questions}.")
     print(f"You have scored {round(score / total_questions * 100, 2)}% on this quiz.")
