@@ -1,6 +1,3 @@
-Assessment2_Implementation/Assignment.py
-
-
 import random
 import array
 
