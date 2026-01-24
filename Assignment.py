@@ -1,3 +1,6 @@
+Assessment2_Implementation/Assignment.py
+
+
 import random
 import array
 
@@ -69,8 +72,6 @@ def run_quiz():
             score += 1
         else:
             print("Incorrect! The answer was", question["answer"])
-
-         Assessment2_Implementation/Assignment.py
 
 
     print("\nEnd of quiz.")
